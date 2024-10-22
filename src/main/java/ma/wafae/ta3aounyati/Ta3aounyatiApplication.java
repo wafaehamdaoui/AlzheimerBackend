@@ -19,9 +19,9 @@ public class Ta3aounyatiApplication {
     @Bean
     CommandLineRunner commandLineRunner(UserService userService, UserRepository userRepository) {
         return args -> {
-            UserRequest user = new UserRequest("Abdessalam",
-                    "Abdessalam@1234",
-                    "abdessalam@gmail.com",
+            UserRequest user = new UserRequest("Admin",
+                    "Admin@1234",
+                    "admin@gmail.com",
                     "Abdessalam Yassine",
                     "https://pbs.twimg.com/profile_images/1651880493942538240/MzoTuhcJ_400x400.jpg",
                     65,"Doctor",
