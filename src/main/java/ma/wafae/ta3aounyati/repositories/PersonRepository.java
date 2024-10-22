@@ -1,2 +1,9 @@
-package ma.wafae.ta3aounyati.repositories;public interface PersonRepository {
+package ma.wafae.ta3aounyati.repositories;
+
+import ma.wafae.ta3aounyati.models.Person;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface PersonRepository extends JpaRepository<Person,Integer> {
 }
