@@ -27,7 +27,7 @@ public class UserController {
         return ResponseEntity.ok(userService.getAll());
     }
 
-    @PostMapping
+    @PostMapping("/auth/signup")
     public ResponseEntity<UserResponse> add(@Valid @RequestBody UserRequest userRequest){
         UserResponse userResponse = userService.add(userRequest);
         return new ResponseEntity<>(userResponse, HttpStatus.CREATED);
