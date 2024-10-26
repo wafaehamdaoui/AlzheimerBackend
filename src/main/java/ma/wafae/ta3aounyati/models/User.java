@@ -36,8 +36,8 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private String fullName;
 
-    @Column(nullable = true)
-    private String profilePhotoUrl; // Can store URL or base64 encoded string
+    @Column(nullable = false)
+    private String profilePhotoUrl;
 
     @Column(nullable = false)
     private Integer age;

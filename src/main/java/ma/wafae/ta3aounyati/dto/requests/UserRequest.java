@@ -25,6 +25,9 @@ public class UserRequest {
     @NotNull(message = "Full name must not be null")
     private String fullName;
 
+    @NotNull(message = "image must not be null")
+    @NotBlank(message = "image must not be blank")
+    @NotEmpty(message = "image must not be empty")
     private String profilePhotoUrl;
 
     @NotNull(message = "Age must not be null")
