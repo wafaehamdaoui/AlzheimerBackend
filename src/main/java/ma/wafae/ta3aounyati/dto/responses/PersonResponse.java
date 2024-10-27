@@ -12,5 +12,6 @@ public class PersonResponse {
     private Integer id;
     private String name;
     private String relation;
+    private String phone;
     private String imagePath;
 }

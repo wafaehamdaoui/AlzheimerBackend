@@ -21,6 +21,10 @@ public class PersonRequest {
     @NotBlank(message = "Relation must not be blank")
     private String relation;
 
+    @NotNull(message = "Phone must not be null")
+    @NotBlank(message = "Phone must not be blank")
+    private String phone;
+
     private String imagePath; // Optional: image path to the profile picture
 }
 

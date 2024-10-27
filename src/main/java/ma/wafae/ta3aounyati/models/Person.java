@@ -27,6 +27,9 @@ public class Person {
     @Column(nullable = false)
     private String relation;
 
+    @Column(nullable = false)
+    private String phone;
+
     @Column(nullable = true)
     private String imagePath;
 
