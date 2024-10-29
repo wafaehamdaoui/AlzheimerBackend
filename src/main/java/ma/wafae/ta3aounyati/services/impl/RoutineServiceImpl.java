@@ -46,6 +46,12 @@ public class RoutineServiceImpl implements RoutineService {
     public RoutineResponse update(RoutineRequest request, Integer id) {
        return null;
     }
+
+    @Override
+    public List<RoutineResponse> getAllByUserId(Integer userId) {
+        return RoutineMapper.INSTANCE.toDtos(routineRepository.findByUserId(userId));
+    }
+
     @Override
     public RoutineResponse updateTime(LocalTime time, Integer id) {
         Routine routine = routineRepository.findById(id).orElseThrow(()->

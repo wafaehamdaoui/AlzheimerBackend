@@ -54,6 +54,7 @@ public class User implements UserDetails {
     @Column(nullable = true, length = 500)
     private String allergies;
 
+
     private LocalDateTime created_at;
     private LocalDateTime updated_at;
 

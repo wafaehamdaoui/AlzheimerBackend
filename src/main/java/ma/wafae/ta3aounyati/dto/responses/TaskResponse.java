@@ -15,4 +15,5 @@ public class TaskResponse {
     private String description;
     private boolean done ;
     private LocalDate date;
+    private Integer userId;
 }

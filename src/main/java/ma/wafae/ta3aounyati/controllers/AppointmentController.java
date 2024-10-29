@@ -20,8 +20,8 @@ public class AppointmentController {
     private final AppointmentService appointmentService;
 
     @GetMapping
-    public ResponseEntity<List<AppointmentResponse>> getAll(){
-        return ResponseEntity.ok(appointmentService.getAll());
+    public ResponseEntity<List<AppointmentResponse>> getAll(@RequestHeader("UserId") Integer userId){
+        return ResponseEntity.ok(appointmentService.getAllByUserId(userId));
     }
     @GetMapping("/{date}")
     public ResponseEntity<List<AppointmentResponse>> getByDate(@PathVariable LocalDate date){

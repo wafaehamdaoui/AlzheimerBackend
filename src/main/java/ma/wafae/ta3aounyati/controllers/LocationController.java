@@ -18,8 +18,8 @@ public class LocationController {
     private final LocationService locationService;
 
     @GetMapping
-    public ResponseEntity<List<LocationResponse>> getAll(){
-        return ResponseEntity.ok(locationService.getAll());
+    public ResponseEntity<List<LocationResponse>> getAll(@RequestHeader("UserId") Integer userId){
+        return ResponseEntity.ok(locationService.getAllByUserId(userId));
     }
     @PostMapping
     public ResponseEntity<LocationResponse> add(@Valid @RequestBody LocationRequest request){

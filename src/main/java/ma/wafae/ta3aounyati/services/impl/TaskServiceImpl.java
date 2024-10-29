@@ -13,6 +13,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestHeader;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -21,15 +22,16 @@ import java.util.List;
 @Transactional
 public class TaskServiceImpl implements TaskService {
     private final TaskRepository taskRepository;
+
     @Override
-    public TaskResponse add(@Valid TaskRequest request) {
+    public TaskResponse add(TaskRequest request) {
         Task task = TaskMapper.INSTANCE.requestToEntity(request);
         return TaskMapper.INSTANCE.entityToResponse(taskRepository.save(task));
     }
 
     @Override
-    public List<TaskResponse> getAll() {
-        return TaskMapper.INSTANCE.toDtos(taskRepository.findAll());
+    public List<TaskResponse> getAllByUserId(Integer userId) {
+        return TaskMapper.INSTANCE.toDtos(taskRepository.findByUserId(userId));
     }
     @Override
     public TaskResponse setTaskAsDone(Integer id) {
@@ -51,7 +53,10 @@ public class TaskServiceImpl implements TaskService {
     public Page<TaskResponse> getAllPageable(Pageable pageable) {
         return null;
     }
-
+    @Override
+    public List<TaskResponse> getAll() {
+        return null;
+    }
     @Override
     public TaskResponse get(Integer integer) {
         return null;

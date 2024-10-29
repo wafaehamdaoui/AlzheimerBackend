@@ -11,10 +11,12 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class JournalRequest {
-    @NotNull(message = "title must not be null")
-    @NotBlank(message = "title must not be blank")
-    @NotEmpty(message = "title must not be empty")
+    @NotNull(message = "description must not be null")
+    @NotBlank(message = "description must not be blank")
+    @NotEmpty(message = "description must not be empty")
     private String description;
-    @NotNull(message = "title must not be null")
+    @NotNull(message = "date must not be null")
     private LocalDateTime date;
+    @NotNull(message = "user id must not be null")
+    private Integer userId;
 }

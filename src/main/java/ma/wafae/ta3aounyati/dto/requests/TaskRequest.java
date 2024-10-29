@@ -17,10 +17,12 @@ public class TaskRequest {
     @NotBlank(message = "title must not be blank")
     @NotEmpty(message = "title must not be empty")
     private String title;
-    @NotNull(message = "title must not be null")
-    @NotBlank(message = "title must not be blank")
-    @NotEmpty(message = "title must not be empty")
+    @NotNull(message = "description must not be null")
+    @NotBlank(message = "description must not be blank")
+    @NotEmpty(message = "description must not be empty")
     private String description;
     private boolean done;
     private LocalDate date;
+    @NotNull(message = "user id must not be null")
+    private Integer userId;
 }

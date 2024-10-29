@@ -20,10 +20,12 @@ public class AppointmentRequest {
     @NotEmpty(message = "title must not be empty")
     private String title;
 
-    @NotNull(message = "title must not be null")
-    @NotBlank(message = "title must not be blank")
-    @NotEmpty(message = "title must not be empty")
+    @NotNull(message = "description must not be null")
+    @NotBlank(message = "description must not be blank")
+    @NotEmpty(message = "description must not be empty")
     private String description;
     private LocalDate date;
     private LocalTime time;
+    @NotNull(message = "user id must not be null")
+    private Integer userId;
 }

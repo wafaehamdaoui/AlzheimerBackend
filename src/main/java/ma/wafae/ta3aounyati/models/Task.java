@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "task_table")
+@Table(name = "table_task")
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +32,9 @@ public class Task {
 
     @Column(nullable = false)
     private LocalDate date;
+    @ManyToOne // Many tasks can belong to one user
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     private LocalDateTime created_at;
     private LocalDateTime updated_at;

@@ -24,6 +24,8 @@ public class PersonRequest {
     @NotNull(message = "Phone must not be null")
     @NotBlank(message = "Phone must not be blank")
     private String phone;
+    @NotNull(message = "user id must not be null")
+    private Integer userId;
 
     private String imagePath; // Optional: image path to the profile picture
 }

@@ -10,5 +10,6 @@ import java.util.List;
 
 
 public interface AppointmentService extends CrudService<AppointmentRequest, AppointmentResponse, Integer> {
+    List<AppointmentResponse> getAllByUserId(Integer userId);
     public List<AppointmentResponse> getByDate(LocalDate date);
 }

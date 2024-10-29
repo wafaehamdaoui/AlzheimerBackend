@@ -18,4 +18,5 @@ public class RoutineResponse {
     private String category;      // The category (e.g., 'medicine', 'exercise', 'task')
     private LocalTime time;       // The time for the routine item
     private boolean done;
+    private Integer userId;
 }

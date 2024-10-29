@@ -33,6 +33,9 @@ public class Appointment {
 
     @Column(nullable = false)
     private LocalDate date;
+    @ManyToOne // Many can belong to one user
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;

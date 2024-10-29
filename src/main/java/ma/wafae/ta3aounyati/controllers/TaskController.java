@@ -20,8 +20,9 @@ public class TaskController {
     private final TaskService taskService;
 
     @GetMapping
-    public ResponseEntity<List<TaskResponse>> getAll(){
-        return ResponseEntity.ok(taskService.getAll());
+    public ResponseEntity<List<TaskResponse>> getAll(@RequestHeader("UserId") Integer userId){
+
+        return ResponseEntity.ok(taskService.getAllByUserId(userId));
     }
     @PostMapping
     public ResponseEntity<TaskResponse> add(@Valid @RequestBody TaskRequest request){

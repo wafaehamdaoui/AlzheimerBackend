@@ -18,8 +18,8 @@ public class JournalController {
     private final JournalService journalService;
 
     @GetMapping
-    public ResponseEntity<List<JournalResponse>> getAll(){
-        return ResponseEntity.ok(journalService.getAll());
+    public ResponseEntity<List<JournalResponse>> getAll(@RequestHeader("UserId") Integer userId){
+        return ResponseEntity.ok(journalService.getAllByUserId(userId));
     }
     @PostMapping
     public ResponseEntity<JournalResponse> add(@Valid @RequestBody JournalRequest request){

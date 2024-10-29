@@ -17,10 +17,13 @@ public class RoutineRequest {
     @NotBlank(message = "title must not be blank")
     @NotEmpty(message = "title must not be empty")
     private String title;         // The title of the routine item
-    @NotNull(message = "title must not be null")
-    @NotBlank(message = "title must not be blank")
-    @NotEmpty(message = "title must not be empty")
-    private String category;      // The category (e.g., 'medicine', 'exercise', 'task')
-    private LocalTime time;       // The time for the routine item
+    @NotNull(message = "category must not be null")
+    @NotBlank(message = "category must not be blank")
+    @NotEmpty(message = "category must not be empty")
+    private String category;
+    @NotNull(message = "time must not be null")
+    private LocalTime time;
     private boolean done;
+    @NotNull(message = "user id must not be null")
+    private Integer userId;
 }

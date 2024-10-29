@@ -13,4 +13,5 @@ public class LocationResponse {
     private String title;
     private String coordinates;
     private String imagePath;
+    private Integer userId;
 }

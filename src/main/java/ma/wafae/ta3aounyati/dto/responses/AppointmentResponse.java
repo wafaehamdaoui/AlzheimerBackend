@@ -17,4 +17,5 @@ public class AppointmentResponse {
     private String description;
     private LocalTime time;
     private LocalDate date;
+    private Integer userId;
 }

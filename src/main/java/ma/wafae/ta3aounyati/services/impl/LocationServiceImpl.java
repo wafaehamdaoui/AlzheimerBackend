@@ -59,4 +59,9 @@ public class LocationServiceImpl implements LocationService {
     public Long getCount() {
         return null;
     }
+
+    @Override
+    public List<LocationResponse> getAllByUserId(Integer userId) {
+        return LocationMapper.INSTANCE.toDtos(locationRepository.findByUserId(userId));
+    }
 }

@@ -58,4 +58,9 @@ public class PersonServiceImpl implements PersonService {
     public Long getCount() {
         return null;
     }
+
+    @Override
+    public List<PersonResponse> getAllByUserId(Integer userId) {
+        return PersonMapper.INSTANCE.toDtos(personRepository.findByUserId(userId));
+    }
 }

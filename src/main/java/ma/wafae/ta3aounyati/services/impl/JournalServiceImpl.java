@@ -60,4 +60,9 @@ public class JournalServiceImpl implements JournalService {
     public Long getCount() {
         return null;
     }
+
+    @Override
+    public List<JournalResponse> getAllByUserId(Integer userId) {
+        return JournalMapper.INSTANCE.toDtos(journalRepository.findByUserId(userId));
+    }
 }

@@ -18,8 +18,8 @@ public class PersonController {
     private final PersonService personService;
 
     @GetMapping
-    public ResponseEntity<List<PersonResponse>> getAll(){
-        return ResponseEntity.ok(personService.getAll());
+    public ResponseEntity<List<PersonResponse>> getAll(@RequestHeader("UserId") Integer userId){
+        return ResponseEntity.ok(personService.getAllByUserId(userId));
     }
     @PostMapping
     public ResponseEntity<PersonResponse> add(@Valid @RequestBody PersonRequest request){

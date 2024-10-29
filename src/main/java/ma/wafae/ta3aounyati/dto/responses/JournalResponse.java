@@ -14,4 +14,5 @@ public class JournalResponse {
     private Integer id;
     private String description;
     private LocalDateTime date;
+    private Integer userId;
 }

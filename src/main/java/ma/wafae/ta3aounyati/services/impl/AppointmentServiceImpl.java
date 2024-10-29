@@ -32,6 +32,12 @@ public class AppointmentServiceImpl implements AppointmentService {
     public List<AppointmentResponse> getAll() {
         return AppointmentMapper.INSTANCE.toDtos(appointmentRepository.findAll());
     }
+
+    @Override
+    public List<AppointmentResponse> getAllByUserId(Integer userId) {
+        return AppointmentMapper.INSTANCE.toDtos(appointmentRepository.findByUserId(userId));
+    }
+
     @Override
     public List<AppointmentResponse> getByDate(LocalDate date) {
         return AppointmentMapper.INSTANCE.toDtos(appointmentRepository.findAllByDate(date));

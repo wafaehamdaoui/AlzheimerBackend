@@ -24,6 +24,9 @@ public class Location {
     private String coordinates;
     @Column(nullable = false)
     private String imagePath;
+    @ManyToOne // Many can belong to one user
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
     private LocalDateTime created_at;
     private LocalDateTime updated_at;
 

@@ -20,8 +20,8 @@ public class RoutineController {
     private final RoutineService routineService;
 
     @GetMapping
-    public ResponseEntity<List<RoutineResponse>> getAll(){
-        System.out.println("routines = "+routineService.getAll());
+    public ResponseEntity<List<RoutineResponse>> getAll(@RequestHeader("UserId") Integer userId){
+        System.out.println("routines = "+routineService.getAllByUserId(userId));
         return ResponseEntity.ok(routineService.getAll());
     }
     @PostMapping
