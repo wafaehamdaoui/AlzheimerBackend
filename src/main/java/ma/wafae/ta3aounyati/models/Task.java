@@ -25,6 +25,9 @@ public class Task {
     private String title;
 
     @Column(nullable = false)
+    private String description;
+
+    @Column(nullable = false)
     private boolean done = false;
 
     @Column(nullable = false)

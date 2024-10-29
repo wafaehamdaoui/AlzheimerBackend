@@ -12,6 +12,7 @@ import java.time.LocalDate;
 public class TaskResponse {
     private Integer id;
     private String title;
+    private String description;
     private boolean done ;
     private LocalDate date;
 }

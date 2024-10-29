@@ -17,6 +17,10 @@ public class TaskRequest {
     @NotBlank(message = "title must not be blank")
     @NotEmpty(message = "title must not be empty")
     private String title;
+    @NotNull(message = "title must not be null")
+    @NotBlank(message = "title must not be blank")
+    @NotEmpty(message = "title must not be empty")
+    private String description;
     private boolean done;
     private LocalDate date;
 }
